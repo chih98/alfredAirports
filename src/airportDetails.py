@@ -155,10 +155,27 @@ def get_frequencies(icao):
                 airport_id = row["id"]
                 airport_ref = row["airport_ref"]
 
-                type = row["type"]
                 desc = row["description"]
                 frq=row["frequency_mhz"]
-                wf.add_item(desc, str(frq) + " mhz",icon="images/radio.png",valid=False)
+
+                formatted_freq = str(frq)
+                if "." not in formatted_freq:
+                    formatted_freq = formatted_freq + ".0"
+
+                if desc == "TWR":
+                    desc = "TOWER"
+
+                if desc == "GND":
+                    desc = "GROUND"
+
+                if desc == "CLNC DEL":
+                    desc = "CLEARENCE DELIVERY"
+
+
+
+
+
+                wf.add_item(str(formatted_freq), desc, icon="images/radio.png",valid=False)
 
 
 
