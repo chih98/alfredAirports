@@ -3,7 +3,7 @@ import urllib2
 import json
 import os
 
-GITHUB_USER = 'jeeftor'
+GITHUB_USER = 'chih98'
 GITHUB_REPO = 'alfredAirports'
 
 ''' Requires you have a github access token as specified below in your home director '''
